@@ -273,7 +273,7 @@ function Main(props) {
                 <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center'  }}>
                     <div style={{ 'width': '100%' }}>
                     <h1 style={{'textAlign':'right', width: '97%'}}>{data.length > 0 ? <div>Tickets : <b>{data.length}</b></div> : 'No Records Found'}</h1>
-                    <div style={{borderRadius: '0.5rem', margin: '1rem', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.3)', width: '97%'}}>
+                    <div style={{borderRadius: '0.5rem', margin: '1rem', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.3)', width: '97%', padding: '1rem'}}>
                         {/* <TableContainer style={{height: '450px', overflowY: 'scroll', overflowX: 'hidden', scrollbarWidth: 'thin'}}> */}
                         <Table size='sm'>
                             <Thead style={{height: '3rem', width: '100%'}}>
@@ -293,7 +293,7 @@ function Main(props) {
                                     console.log('el ', el.id, idx);
                                     // console.log(conversations.size,"ppppppppppp")
                                     // console.log('d2134424  ', contacts.size, el.requester_id, contacts.get(el.responder_id))
-                                    return (<Tr key={idx}>
+                                    return (<Tr style={{height:'3rem'}} key={idx}>
                                         <Td style={{width: '5px'}}>{el.id}</Td>
                                         {/* <Td>{el.status}</Td> */}
                                         <Td>{statusSwitch(el.status)}</Td>
@@ -301,7 +301,7 @@ function Main(props) {
                                         {/* <Td style={{ backgroundColor: el.priority == 1 ? 'plum' : el.priority == 2 ? 'yellow' : el.priority == 3 ? 'skyblue' : el.priority == 4 ? 'red' : null }}>{prioritySwitch(el.priority)}</Td> */}
                                         <Td>{prioritySwitch(el.priority)}</Td>
                                         <Td>{el.subject}</Td>
-                                        {contacts.get(el.requester_id) != null ? <Td>{contacts.get(el.requester_id)}</Td> : <Td>{'Unkown User'}</Td>}
+                                        {contacts.get(el.requester_id) != null ? <Td>{contacts.get(el.requester_id)}</Td> : <Td>{'DNOW Contact'}</Td>}
                                         <Td><div style={{display: 'flex', justifyContent: 'center'}}>{new Date(el.created_at).toLocaleDateString()}</div></Td>
                                     
                                         {/* {conversations.get(el.ticketId) != null ? <Td><a href={conversations.get(el.url)} target="_blank">link</a></Td> : <Td>{'No conv'}</Td>} */}
