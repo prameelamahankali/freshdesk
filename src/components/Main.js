@@ -272,7 +272,7 @@ function Main(props) {
                 </table> */}
                 <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center'  }}>
                     <div style={{ 'width': '100%' }}>
-                    <h1 style={{'textAlign':'right', width: '95%'}}>{data.length > 0 ? <div>Tickets : <b>{data.length}</b></div> : 'No Records Found'}</h1>
+                    <h1 style={{'textAlign':'right', width: '97%'}}>{data.length > 0 ? <div>Tickets : <b>{data.length}</b></div> : 'No Records Found'}</h1>
                     <div style={{borderRadius: '0.5rem', margin: '1rem', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.3)', width: '97%'}}>
                         {/* <TableContainer style={{height: '450px', overflowY: 'scroll', overflowX: 'hidden', scrollbarWidth: 'thin'}}> */}
                         <Table size='sm'>
@@ -302,7 +302,7 @@ function Main(props) {
                                         <Td>{prioritySwitch(el.priority)}</Td>
                                         <Td>{el.subject}</Td>
                                         {contacts.get(el.requester_id) != null ? <Td>{contacts.get(el.requester_id)}</Td> : <Td>{'Unkown User'}</Td>}
-                                        <Td style={{width: '17%'}}>{new Date(el.created_at).toLocaleDateString()}</Td>
+                                        <Td><div style={{display: 'flex', justifyContent: 'center'}}>{new Date(el.created_at).toLocaleDateString()}</div></Td>
                                     
                                         {/* {conversations.get(el.ticketId) != null ? <Td><a href={conversations.get(el.url)} target="_blank">link</a></Td> : <Td>{'No conv'}</Td>} */}
                                         {/* <Td><a href={conversations[el.id]} target="_blank"></a></Td> */}
